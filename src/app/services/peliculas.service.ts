@@ -25,4 +25,21 @@ export class PeliculasService {
       })
     );
   }
+
+  buscarPelicula(texto: string) {
+    let url = `${
+      this.urlMoviedb
+    }search/movie?query=${texto}&sort_by=popularity.desc&api_key=${
+      this.apiKey
+    }&language=es`;
+    return this.http.get(url).pipe(
+      map(res => {
+        let peliculas: any[] = [];
+        for (let pelicula of res.json().results) {
+          peliculas.push(pelicula);
+        }
+        return peliculas;
+      })
+    );
+  }
 }

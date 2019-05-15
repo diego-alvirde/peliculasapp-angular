@@ -12,5 +12,8 @@ export class AppComponent {
     this._ps.getPopulares().subscribe(data => {
       console.log(data);
     });
+    this._ps.buscarPelicula("batman").subscribe(data => {
+      console.log(data);
+    });
   }
 }
