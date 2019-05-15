@@ -14,6 +14,8 @@ import { ActualesComponent } from "./components/actuales/actuales.component";
 //Rutas
 import { appRouting } from "./app.routes";
 import { NinosComponent } from './components/ninos/ninos.component';
+import { PeliculaTarjetaComponent } from './components/pelicula-tarjeta/pelicula-tarjeta.component';
+import { PeliculaComponent } from './components/pelicula/pelicula.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { NinosComponent } from './components/ninos/ninos.component';
     NavbarComponent,
     ImagenPipe,
     ActualesComponent,
-    NinosComponent
+    NinosComponent,
+    PeliculaTarjetaComponent,
+    PeliculaComponent
   ],
   imports: [BrowserModule, HttpModule, JsonpModule, appRouting],
   providers: [PeliculasService],

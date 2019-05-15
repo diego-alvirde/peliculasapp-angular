@@ -76,4 +76,15 @@ export class PeliculasService {
       })
     );
   }
+
+  getPelicula(id: string) {
+    let url = `${this.urlMoviedb}movie/${id}?api_key=${
+      this.apiKey
+    }&language=es`;
+    return this.http.get(url).pipe(
+      map(res => {
+        return res.json();
+      })
+    );
+  }
 }

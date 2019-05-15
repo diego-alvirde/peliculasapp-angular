@@ -1,0 +1,16 @@
+<h1>{{pelicula.original_title | uppercase}} <small>{{pelicula.release_date | date:'y'}}</small></h1>
+<hr>
+<div class="row animated fadeIn fast">
+    <div class="col-md-4">
+        <img [src]="pelicula.poster_path | imagen" class="img-fluid" alt="">
+        <br><br>
+        <a class="btn btn-outline-danger btn-block" [routerLink]="['/']">Regresar</a>
+    </div>
+    <div class="col-md-8">
+        <h3>{{pelicula.title}}</h3>
+        <hr>
+        <p>
+            {{pelicula.overview}}
+        </p>
+    </div>
+</div>
