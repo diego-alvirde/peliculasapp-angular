@@ -42,4 +42,38 @@ export class PeliculasService {
       })
     );
   }
+
+  peliculasActuales() {
+    let url = `${
+      this.urlMoviedb
+    }discover/movie?primary_release_date.gte=2019-01-01&primary_release_date.lte=2019-05-01&api_key=${
+      this.apiKey
+    }&language=es`;
+    return this.http.get(url).pipe(
+      map(res => {
+        let peliculas: any[] = [];
+        for (let pelicula of res.json().results) {
+          peliculas.push(pelicula);
+        }
+        return peliculas;
+      })
+    );
+  }
+
+  peliculasNinos() {
+    let url = `${
+      this.urlMoviedb
+    }discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api_key=${
+      this.apiKey
+    }&language=es`;
+    return this.http.get(url).pipe(
+      map(res => {
+        let peliculas: any[] = [];
+        for (let pelicula of res.json().results) {
+          peliculas.push(pelicula);
+        }
+        return peliculas;
+      })
+    );
+  }
 }
