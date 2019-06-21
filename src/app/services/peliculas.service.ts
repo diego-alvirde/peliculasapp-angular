@@ -37,7 +37,7 @@ export class PeliculasService {
         let peliculas: any[] = [];
         for (let pelicula of res.json().results) {
           peliculas.push(pelicula);
-        }
+        }        
         return peliculas;
       })
     );

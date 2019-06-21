@@ -15,6 +15,11 @@
                 <a class="nav-link" [routerLink]="['ninos']">Niños</a>
             </li>
         </ul>
+        <div class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar Pelicula" aria-label="Buscar Pelicula" (keyup.enter)="buscarPelicula(buscarTexto.value)" #buscarTexto>
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="button" (click)="buscarPelicula(buscarTexto.value)">Buscar
+        Pelicula</button>
+        </div>
     </div>
 
 </nav>

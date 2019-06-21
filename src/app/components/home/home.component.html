@@ -3,12 +3,4 @@
         Peliculas en Populares
     </div>
 </div>
-<div class="row">
-    <div class="card col-md-3 mt-3" *ngFor="let pelicula of peliculas">
-        <img [src]="pelicula.poster_path | imagen" [alt]="pelicula.original_title" class="card-img-top">
-        <div class="card-body">
-            <h5 class="card-title">{{pelicula.original_title}}</h5>
-            <button class="btn btn-outline-primary btn-block" (click)="verPelicula(pelicula.id)">Detalles</button>
-        </div>
-    </div>
-</div>
+<app-pelicula-tarjeta [peliculas]="peliculas"></app-pelicula-tarjeta>
